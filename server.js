@@ -3,6 +3,8 @@
 // Hapi modules
 const Hapi    = require('hapi');
 const Good    = require('good');
+const Path    = require('path');
+const Hoek    = require('hoek');
 
 // Server modules
 const server  = new Hapi.Server();
@@ -34,6 +36,23 @@ server.register(require('inert'), (err) => {
       }
     }
   })
+});
+
+// Configure View Engine
+server.register(require('vision'), (err) => {
+  Hoek.assert(!err, err);
+
+  server.views({
+    engines : {
+      html : require('handlebars')
+    },
+    relativeTo  : __dirname,
+    path        : './views',
+    // By default, render the master layout file, unless specified in the route.
+    layout      : 'master',
+    layoutPath  : './views/layout',
+    helpersPath : './views/helpers'
+  });
 });
 
 // Register good console to the server, then run -> gives us detailed output

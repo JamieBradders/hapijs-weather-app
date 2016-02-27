@@ -1,12 +1,12 @@
 // Export array of objects containig app routes
-const currentTemp = require('../controllers/current-temp');
+const weather = require('../controllers/weather');
 
 module.exports = [
   {
     method  : 'GET',
     path    : '/',
     handler : (request, reply) => {
-      reply('Hello, world!');
+      reply.view('homepage', { title : 'Hello this is my homepage' });
     }
   },
 
@@ -14,7 +14,7 @@ module.exports = [
     method  : 'GET',
     path    : '/hello/{name}',
     handler : (request, reply) => {
-      reply('Hello, ' + encodeURIComponent(request.params.name) + '!');
+      reply.view('homepage', { title : 'Hello ' + request.params.name });
     }
   },
 
@@ -25,7 +25,7 @@ module.exports = [
     path    : '/weather/current/{location}',
     handler  : (request, reply) => {
       const location = request.params.location;
-      currentTemp.getCurrentTemp(location, request, reply);
+      weather.getCurrentTemp(location, request, reply);
     }
   }
 

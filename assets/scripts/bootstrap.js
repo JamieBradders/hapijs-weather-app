@@ -29,6 +29,9 @@ export function callWeatherApi() {
 
     const location = values.location;
 
+    // Currently using my own stuff with Ajax.
+    // Consider using something like npm request for this app or maybe even
+    // Angular or something of the likes, depends if it's really needed or not...
     $.ajax({
       url    : '/weather/current/' + location,
       method : 'GET'

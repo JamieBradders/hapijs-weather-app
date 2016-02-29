@@ -4,7 +4,7 @@
  * on which one to use -_-
  */
 
-import $ from 'jquery';
+// import $ from 'jquery';
 
 export function bootstrap() {
   console.log('Hello world from bootstrap');

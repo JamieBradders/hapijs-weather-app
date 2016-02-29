@@ -6,7 +6,7 @@ module.exports = [
     method  : 'GET',
     path    : '/',
     handler : (request, reply) => {
-      reply.view('homepage', { title : 'Hello this is my homepage' });
+      reply.view('homepage');
     }
   },
 

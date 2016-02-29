@@ -1,7 +1,7 @@
 <h2>{{ title }}</h2>
 
 <!-- Going to include pure.css grid based framework, with own files for custom ui components -->
-<div class="application-container">
+<!-- <div class="application-container">
   <div class="location-entry">
     <form class="location-data">
       <fieldset>
@@ -10,4 +10,29 @@
         <input type="submit" value="Get Weather">
     </form>
   </div>
-</div<
+</div> -->
+
+<div class="container">
+  <!-- Page content here -->
+  <h4>I want to get the weather!</h4>
+  <p>No problem. Input the name of the city that you want to get the current weather for. This cool little app will make a call to the open weather map API and return some data for you. Check out the console.</p>
+
+  <div class="section">
+    <form class="location-data">
+      <!--<input type="text" name="location" class="location__name">-->
+      <div class="row">
+        <div class="input-field col s9">
+          <i class="material-icons prefix">location_on</i>
+          <input id="icon_prefix" type="text" class="validate location__name">
+          <label for="icon_prefix">Your City</label>
+        </div>
+
+        <div class="input-field col s3">
+          <button class="btn waves-effect waves-light" type="submit" name="action">Get Weather
+            <i class="material-icons right">cloud</i>
+          </button>
+        </div>
+      </div>
+
+    </form>
+  </div>

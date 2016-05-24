@@ -44,12 +44,15 @@ server.register(require('vision'), (err) => {
 
   server.views({
     engines : {
-      html : require('handlebars')
+      'html' : {
+          module: require('handlebars'),
+          compileMode: 'sync'
+      }
     },
     relativeTo  : __dirname,
     path        : './views',
     // By default, render the master layout file, unless specified in the route.
-    layout      : 'master',
+    layout      : true,
     layoutPath  : './views/layout',
     helpersPath : './views/helpers'
   });

@@ -3,3 +3,4 @@ node_modules/*
 # Ignore public with the exception of JSPM config.
 public/*
 !public/config.js
+.env
